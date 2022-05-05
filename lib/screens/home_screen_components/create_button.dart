@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
-//Classe que cria os botões da Home Screen
-//parametros: texto , height e width (dimensões)
-
 class CreateButton extends StatelessWidget {
-  String text;
-  double height;
-  double width;
+  /// Cria os botões da Home Screen // Parâmetros: texto , height e width (dimensões)
 
-  CreateButton(
+  final String text;
+  final double height;
+  final double width;
+
+  const CreateButton(
       {Key? key, this.text = '-', this.height = 100.0, this.width = 200.0})
       : super(key: key);
 
