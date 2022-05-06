@@ -1,5 +1,5 @@
+import 'package:apontator/screens/home_screen_components/text_field_search.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class ContainerMid extends StatelessWidget {
   /// Cria o container do meio da HomeScreen // Sem parâmetros
@@ -13,19 +13,11 @@ class ContainerMid extends StatelessWidget {
         height: MediaQuery.of(context).size.height * 0.6,
         child: Center(
           child: Column(
-            children: [
-              TextField(
-                decoration: const InputDecoration(
-                  icon: Icon(Icons.search),
-                  border: OutlineInputBorder(),
-                  hintText: 'CÓDIGO DA PRODUÇÃO',
-                  floatingLabelAlignment: FloatingLabelAlignment.center,
-                ),
-                inputFormatters: <TextInputFormatter>[
-                  FilteringTextInputFormatter.digitsOnly
-                ],
-                keyboardType: TextInputType.number,
-              ),
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              TextFieldSearch(hint: 'CÓDIGO DA OPERAÇÃO'),
+              TextFieldSearch(hint: 'CÓDIGO DA MÁQUINA'),
+              TextFieldSearch(hint: 'CÓDIGO DO FUNCIONÁRIO')
             ],
           ),
         ));

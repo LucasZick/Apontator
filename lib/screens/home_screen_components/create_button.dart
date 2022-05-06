@@ -8,7 +8,7 @@ class CreateButton extends StatelessWidget {
   final double width;
 
   const CreateButton(
-      {Key? key, this.text = '-', this.height = 100.0, this.width = 200.0})
+      {Key? key, this.text = '-', this.height = 150.0, this.width = 300.0})
       : super(key: key);
 
   @override
@@ -20,12 +20,11 @@ class CreateButton extends StatelessWidget {
         style: TextButton.styleFrom(
           backgroundColor: Theme.of(context).primaryColor,
           elevation: 10,
+          primary: Colors.green,
         ),
         child: Text(
           text,
-          style: TextStyle(
-            color: Theme.of(context).accentColor,
-          ),
+          style: TextStyle(color: Theme.of(context).accentColor, fontSize: 24),
           textAlign: TextAlign.center,
         ),
         onPressed: () {},
