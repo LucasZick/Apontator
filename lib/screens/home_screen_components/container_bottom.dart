@@ -8,12 +8,7 @@ class ContainerBottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          border: Border.all(
-            width: 2,
-          ),
-          color: const Color.fromARGB(255, 255, 255, 255)),
+    return SizedBox(
       width: double.infinity,
       height: MediaQuery.of(context).size.height * 0.3,
       child: Row(

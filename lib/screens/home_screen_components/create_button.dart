@@ -18,14 +18,13 @@ class CreateButton extends StatelessWidget {
       width: width,
       child: TextButton(
         style: TextButton.styleFrom(
-            primary: const Color.fromARGB(255, 13, 37, 7),
-            backgroundColor: const Color.fromARGB(255, 60, 100, 30),
-            elevation: 10,
-            shadowColor: const Color.fromARGB(255, 0, 0, 0)),
+          backgroundColor: Theme.of(context).primaryColor,
+          elevation: 10,
+        ),
         child: Text(
           text,
-          style: const TextStyle(
-            color: Color.fromARGB(255, 255, 255, 255),
+          style: TextStyle(
+            color: Theme.of(context).accentColor,
           ),
           textAlign: TextAlign.center,
         ),

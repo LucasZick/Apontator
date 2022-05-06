@@ -16,7 +16,7 @@ class TextAppBar extends StatelessWidget {
       text,
       style: TextStyle(
         fontSize: fontSize,
-        color: const Color.fromARGB(255, 60, 100, 30),
+        color: Theme.of(context).accentColor,
         fontWeight: FontWeight.w400,
       ),
     ));
