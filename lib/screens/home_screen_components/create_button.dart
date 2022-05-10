@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'text_field_search.dart';
 
 class CreateButton extends StatelessWidget {
   /// Cria os botões da Home Screen // Parâmetros: texto , height e width (dimensões)
@@ -6,9 +7,14 @@ class CreateButton extends StatelessWidget {
   final String text;
   final double height;
   final double width;
+  final int id;
 
   const CreateButton(
-      {Key? key, this.text = '-', this.height = 150.0, this.width = 300.0})
+      {Key? key,
+      this.id = 0,
+      this.text = '-',
+      this.height = 150.0,
+      this.width = 300.0})
       : super(key: key);
 
   @override
@@ -27,7 +33,9 @@ class CreateButton extends StatelessWidget {
           style: TextStyle(color: Theme.of(context).accentColor, fontSize: 24),
           textAlign: TextAlign.center,
         ),
-        onPressed: () {},
+        onPressed: () {
+          print(TextFieldSearch.details['maquina']);
+        },
       ),
     );
   }
