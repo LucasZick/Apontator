@@ -25,7 +25,7 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
       child: TextField(
         textAlign: TextAlign.center,
         onChanged: (String texto) {
-          TextFieldSearch.details[widget.id] = texto;
+          TextFieldSearch.details[widget.id] = int.parse(texto);
         },
         decoration: InputDecoration(
             floatingLabelBehavior: FloatingLabelBehavior.auto,

@@ -14,8 +14,8 @@ class ContainerBottom extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: const [
-          CreateButton(text: 'INICIAR\nAPONTAMENTO'),
-          CreateButton(text: 'FINALIZAR\nAPONTAMENTO')
+          CreateButton(text: 'INICIAR\nAPONTAMENTO', id: 1),
+          CreateButton(text: 'FINALIZAR\nAPONTAMENTO', id: 2)
         ],
       ),
     );
