@@ -20,11 +20,10 @@ class _ContainerMidState extends State<ContainerMid> {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               TextFieldSearch(hint: 'CÓDIGO DA OPERAÇÃO', id: 'operacao'),
               TextFieldSearch(hint: 'CÓDIGO DA MÁQUINA', id: 'maquina'),
               TextFieldSearch(hint: 'CÓDIGO DO FUNCIONÁRIO', id: 'funcionario'),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.075),
               LabelContainer(),
             ],
           ),

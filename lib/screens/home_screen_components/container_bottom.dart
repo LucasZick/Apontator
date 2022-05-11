@@ -2,7 +2,7 @@ import 'package:apontator/screens/home_screen_components/create_button.dart';
 import 'package:flutter/material.dart';
 
 class ContainerBottom extends StatelessWidget {
-  ///Constroi o container inferior da HomeScreen // Sem parâmetros
+  ///Constroi o container inferior da HomeScreen// Sem parâmetros
 
   const ContainerBottom({Key? key}) : super(key: key);
 

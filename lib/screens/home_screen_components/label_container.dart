@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LabelContainer extends StatefulWidget {
+  ///Container onde são dispostos os dados recebidos como retorno da API.
+
   const LabelContainer({Key? key}) : super(key: key);
 
   @override
@@ -12,7 +14,7 @@ class _LabelContainerState extends State<LabelContainer> {
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height * 0.2,
-      color: Theme.of(context).primaryColor,
+      color: Color.fromARGB(255, 204, 241, 162),
     );
   }
 }

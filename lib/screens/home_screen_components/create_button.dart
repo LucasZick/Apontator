@@ -25,37 +25,47 @@ class CreateButton extends StatelessWidget {
       height: height,
       width: width,
       child: TextButton(
-        style: TextButton.styleFrom(
-          backgroundColor: Theme.of(context).primaryColor,
-          elevation: 10,
-          primary: Colors.green,
-        ),
-        child: Text(
-          text,
-          style: TextStyle(color: Theme.of(context).accentColor, fontSize: 24),
-          textAlign: TextAlign.center,
-        ),
-        onPressed: () async {
-          final uri = Uri.parse("http://192.168.0.222:9999/novo/apontamento/");
-          Map<String, dynamic> body = {
-            "numero_operacao": TextFieldSearch.details['operacao'],
-            "numero_maquina": TextFieldSearch.details['maquina'],
-            "funcionario_id": TextFieldSearch.details['funcionario'],
-            "tipo_apontamento": "TP",
-            "data_apontamento": "2020-07-10T08:29:00.191Z",
-            "quantidade_operadores": 1,
-            "inicio": "1998-10-11T09:52:38.932Z",
-          };
-          String jsonBody = jsonEncode(body);
-          print(jsonBody);
+          style: TextButton.styleFrom(
+            backgroundColor: Theme.of(context).primaryColor,
+            elevation: 10,
+            primary: Colors.green,
+          ),
+          child: Text(
+            text,
+            style:
+                TextStyle(color: Theme.of(context).accentColor, fontSize: 24),
+            textAlign: TextAlign.center,
+          ),
+          onPressed: () async {
+            if (id == 1) {
+              // se o botão for de INICIAR APONTAMENTO
+              () async {
+                final uri =
+                    Uri.parse("http://192.168.0.222:9999/novo/apontamento/");
+                Map<String, dynamic> body = {
+                  "numero_operacao": TextFieldSearch.details['operacao'],
+                  "numero_maquina": TextFieldSearch.details['maquina'],
+                  "funcionario_id": TextFieldSearch.details['funcionario'],
+                  "tipo_apontamento": "TP",
+                  "data_apontamento": "2020-07-10T08:29:00.191Z",
+                  "quantidade_operadores": 1,
+                  "inicio": "1998-10-11T09:52:38.932Z",
+                };
+                String jsonBody = jsonEncode(body);
+                print(jsonBody);
 
-          Response response = await post(uri,
-              body: jsonBody, headers: {"Content-Type": "application/json"});
+                Response response = await post(uri,
+                    body: jsonBody,
+                    headers: {"Content-Type": "application/json"});
 
-          print(response.statusCode);
-          print(response.body);
-        },
-      ),
+                print(response.statusCode);
+                print(response.body);
+              };
+            } else {
+              //se o botão for de FINALIZAR APONTAMENTO
+            }
+            ;
+          }),
     );
   }
 }

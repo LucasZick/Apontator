@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class TextFieldSearch extends StatefulWidget {
+  ///Cria os widgets de texto do formulário de pesquisa, cada botão precisa
+  ///receber como parâmetro a hint text e o seu id, o armazenamento é feito no
+  ///dicionário com o padrão {<String>id: <String>texto};
+
   final String hint;
   final String id;
   static var details = {};
@@ -25,7 +29,8 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
       child: TextField(
         textAlign: TextAlign.center,
         onChanged: (String texto) {
-          TextFieldSearch.details[widget.id] = int.parse(texto);
+          TextFieldSearch.details[widget.id] =
+              int.parse(texto); // REGISTRO NO DIC
         },
         decoration: InputDecoration(
             floatingLabelBehavior: FloatingLabelBehavior.auto,
