@@ -15,19 +15,17 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        appBar: AppBar(
-          title: const TextAppBar(text: 'APONTAR PRODUÇÃO'),
-          toolbarHeight: MediaQuery.of(context).size.height * 0.1 - 24,
-          backgroundColor: Theme.of(context).primaryColor,
-        ),
-        body: Column(children: const [
-          ContainerMid(),
-          ContainerBottom(),
-        ]),
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        title: const TextAppBar(text: 'APONTAR PRODUÇÃO'),
+        toolbarHeight: MediaQuery.of(context).size.height * 0.1 - 24,
+        backgroundColor: Theme.of(context).primaryColor,
       ),
+      body: Column(children: const [
+        ContainerMid(),
+        ContainerBottom(),
+      ]),
     );
   }
 }

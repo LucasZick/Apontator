@@ -24,13 +24,14 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
   String title = '';
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.9,
       child: TextField(
         textAlign: TextAlign.center,
         onChanged: (String texto) {
-          TextFieldSearch.details[widget.id] =
-              int.parse(texto); // REGISTRO NO DIC
+          TextFieldSearch.details[widget.id] = int.parse(texto);
+          print(TextFieldSearch.details);
+          // REGISTRO NO DIC
         },
         decoration: InputDecoration(
             floatingLabelBehavior: FloatingLabelBehavior.auto,

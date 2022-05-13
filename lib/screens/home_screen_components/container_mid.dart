@@ -16,15 +16,14 @@ class _ContainerMidState extends State<ContainerMid> {
   Widget build(BuildContext context) {
     return SizedBox(
         width: double.infinity,
-        height: MediaQuery.of(context).size.height * 0.6,
+        height: MediaQuery.of(context).size.height * 0.3,
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: const [
               TextFieldSearch(hint: 'CÓDIGO DA OPERAÇÃO', id: 'operacao'),
               TextFieldSearch(hint: 'CÓDIGO DA MÁQUINA', id: 'maquina'),
               TextFieldSearch(hint: 'CÓDIGO DO FUNCIONÁRIO', id: 'funcionario'),
-              LabelContainer(),
             ],
           ),
         ));
