@@ -59,14 +59,10 @@ class CreateButtonState extends State<CreateButton> {
       Response response = await get(uri);
       var retornoID = jsonDecode(response.body);
       var idApont = retornoID[0]['id'];
-
-      print(idApont);
-
       //FIM DO GET ID
 
       uri =
           Uri.parse("http://192.168.0.222:9999/finaliza/apontamento/$idApont/");
-      print(uri);
       Map<String, dynamic> body = {
         "numero_operacao": TextFieldSearch.details['operacao'],
         "numero_maquina": TextFieldSearch.details['maquina'],
@@ -85,9 +81,9 @@ class CreateButtonState extends State<CreateButton> {
       });
       var retornos = jsonDecode(response.body);
       print(retornos);
-      return retornos['message'];
+      return retornos;
     } on Exception catch (e) {
-      print('Erro no getBody do fechamento do apontamento!');
+      print('Erro no getBody do fechamento do apontamento! $e');
     }
   }
 
