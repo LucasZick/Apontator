@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class ContainerBottom extends StatefulWidget {
   ///Constroi o container inferior da HomeScreen// Sem parâmetros
-  static Map texto = {'operacao': '', 'realizado': '', 'total': ''};
+  static Map texto = {};
 
   const ContainerBottom({Key? key}) : super(key: key);
 
@@ -17,18 +17,10 @@ class _ContainerBottomState extends State<ContainerBottom> {
     setState(
       () {
         if (textoAPI != null) {
-          ContainerBottom.texto['operacao'] = textoAPI['operacao'];
-          if (textoAPI['realizado'] == null) {
-            ContainerBottom.texto['realizado'] = 0;
-          } else {
-            ContainerBottom.texto['realizado'] = textoAPI['realizado'];
-          }
-          ContainerBottom.texto['total'] = textoAPI['total'];
+          ContainerBottom.texto = textoAPI;
           print(ContainerBottom.texto);
         } else {
-          ContainerBottom.texto['operacao'] = 'Digite uma operação válida';
-          ContainerBottom.texto['realizado'] = '';
-          ContainerBottom.texto['total'] = '';
+          ContainerBottom.texto = {"operacao": 'Digite uma operação válida'};
         }
       },
     );

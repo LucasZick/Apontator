@@ -17,28 +17,25 @@ class LabelContainerState extends State<LabelContainer> {
         height: MediaQuery.of(context).size.height * 0.3,
         width: double.infinity,
         color: Color.fromARGB(255, 204, 241, 162),
-        child: Center(
-            child: Column(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text(
-              ContainerBottom.texto['operacao'].toString(),
-              style: TextStyle(
-                  color: Theme.of(context).primaryColor, fontSize: 24),
-              textAlign: TextAlign.center,
-            ),
-            Text(
-              ContainerBottom.texto['realizado'].toString(),
-              style: TextStyle(
-                  color: Theme.of(context).primaryColor, fontSize: 24),
-              textAlign: TextAlign.center,
-            ),
-            Text(
-              ContainerBottom.texto['total'].toString(),
-              style: TextStyle(
-                  color: Theme.of(context).primaryColor, fontSize: 24),
-              textAlign: TextAlign.center,
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  ContainerBottom.texto
+                      .toString()
+                      .replaceAll(',', '\n')
+                      .substring(
+                          1, ContainerBottom.texto.toString().length - 1),
+                  style: TextStyle(
+                      color: Theme.of(context).primaryColor, fontSize: 24),
+                  textAlign: TextAlign.center,
+                )
+              ],
             ),
           ],
-        )));
+        ));
   }
 }

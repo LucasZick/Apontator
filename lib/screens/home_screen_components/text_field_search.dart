@@ -25,7 +25,7 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.9,
+      width: MediaQuery.of(context).size.width * 0.45,
       child: TextField(
         textAlign: TextAlign.center,
         onChanged: (String texto) {
