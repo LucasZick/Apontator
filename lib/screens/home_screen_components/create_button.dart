@@ -43,9 +43,8 @@ class CreateButtonState extends State<CreateButton> {
       retornos['message']['operacao'] = TextFieldSearch.details['operacao'];
 
       return retornos['message'];
-    } catch (error) {
-      print(
-          'Erro no getBody da abertura do apontamento!'); //se o botão for de FINALIZAR APONTAMENTO
+    } on Exception catch (e) {
+      return ({'error': 'Erro no getBody da abertura do apontamento! $e'});
     }
   }
 
@@ -81,9 +80,9 @@ class CreateButtonState extends State<CreateButton> {
       });
       var retornos = jsonDecode(response.body);
       print(retornos);
-      return retornos;
+      return (retornos);
     } on Exception catch (e) {
-      print('Erro no getBody do fechamento do apontamento! $e');
+      return ({'error': 'Erro no getBody do fechamento do apontamento! $e'});
     }
   }
 
@@ -124,7 +123,7 @@ class CreateButtonState extends State<CreateButton> {
             color: Theme.of(context).primaryColor,
             fontSize: 50,
           )),
-      content: const Text("Apontamento iniciado!",
+      content: const Text("Pronto!",
           style: TextStyle(
             fontSize: 30,
           )),
@@ -172,7 +171,7 @@ class CreateButtonState extends State<CreateButton> {
             }
           } else if (widget.id == 2) {
             try {
-              texto = getBodyFechaApontamento();
+              texto = await getBodyFechaApontamento();
               showDialog(
                 context: context,
                 builder: (BuildContext context) {
@@ -216,7 +215,8 @@ class CreateButtonState extends State<CreateButton> {
       child: TextButton(
         style: TextButton.styleFrom(
           backgroundColor: Theme.of(context).primaryColor,
-          elevation: 10,
+          elevation: 5,
+          shadowColor: Colors.lightGreenAccent,
           primary: Colors.green,
         ),
         child: Text(

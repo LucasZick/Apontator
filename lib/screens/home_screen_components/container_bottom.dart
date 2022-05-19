@@ -16,7 +16,7 @@ class _ContainerBottomState extends State<ContainerBottom> {
   refresh(Map textoAPI) {
     setState(
       () {
-        if (textoAPI != null) {
+        if (textoAPI != {}) {
           ContainerBottom.texto = textoAPI;
           print(ContainerBottom.texto);
         } else {

@@ -23,15 +23,21 @@ class LabelContainerState extends State<LabelContainer> {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text(
-                  ContainerBottom.texto
-                      .toString()
-                      .replaceAll(',', '\n')
-                      .substring(
-                          1, ContainerBottom.texto.toString().length - 1),
-                  style: TextStyle(
-                      color: Theme.of(context).primaryColor, fontSize: 24),
-                  textAlign: TextAlign.center,
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.3,
+                  width: MediaQuery.of(context).size.width * 1,
+                  child: Center(
+                    child: Text(
+                      ContainerBottom.texto
+                          .toString()
+                          .replaceAll(',', '\n')
+                          .substring(
+                              1, ContainerBottom.texto.toString().length - 1),
+                      style: TextStyle(
+                          color: Theme.of(context).primaryColor, fontSize: 24),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
                 )
               ],
             ),
