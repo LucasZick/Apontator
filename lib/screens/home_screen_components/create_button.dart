@@ -30,7 +30,7 @@ class CreateButtonState extends State<CreateButton> {
   getBodyAbreApontamento() async {
     ///Envia a request para a API e retorna o corpo da response
     try {
-      final uri = Uri.parse("http://192.168.0.222:9999/novo/apontamento/");
+      final uri = Uri.parse("http://127.0.0.1:8001/novo/apontamento/");
       Map<String, dynamic> body = {
         "numero_operacao": TextFieldSearch.details['operacao']
       };
@@ -54,14 +54,13 @@ class CreateButtonState extends State<CreateButton> {
     //GET ID DA OPERACAO
 
     try {
-      Uri uri = Uri.parse('http://192.168.0.222:9999/lista/apontamentos/1');
+      Uri uri = Uri.parse('http://127.0.0.1:8001/lista/apontamentos/1');
       Response response = await get(uri);
       var retornoID = jsonDecode(response.body);
       var idApont = retornoID[0]['id'];
       //FIM DO GET ID
 
-      uri =
-          Uri.parse("http://192.168.0.222:9999/finaliza/apontamento/$idApont/");
+      uri = Uri.parse("http://127.0.0.1:8001/finaliza/apontamento/$idApont/");
       Map<String, dynamic> body = {
         "numero_operacao": TextFieldSearch.details['operacao'],
         "numero_maquina": TextFieldSearch.details['maquina'],

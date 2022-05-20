@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './config_text_field.dart';
+
 class ConfigSaveButton extends StatelessWidget {
   const ConfigSaveButton({Key? key}) : super(key: key);
 
@@ -11,7 +13,9 @@ class ConfigSaveButton extends StatelessWidget {
         width: MediaQuery.of(context).size.height * 0.1,
         height: MediaQuery.of(context).size.height * 0.1,
         child: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            print(ConfigTextFieldState.configController.text);
+          },
           tooltip: 'Save',
           backgroundColor: Theme.of(context).primaryColor,
           child: Icon(
